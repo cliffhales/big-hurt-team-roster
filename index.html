@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Hurt Team Roster</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__image">
+        <img src="assets/big-hurt-header.png" alt="Big Hurt Port Angeles logo" />
+      </div>
+      <div class="hero__content">
+        <h1>Big Hurt Team Roster</h1>
+      </div>
+    </header>
+
+    <main>
+      <form id="team-form" novalidate>
+        <section class="card">
+          <h2>Team Details</h2>
+          <div class="grid">
+            <label>
+              Team name
+              <input type="text" name="teamName" required />
+            </label>
+            <label>
+              Team captain
+              <input type="text" name="teamCaptain" required />
+            </label>
+            <label>
+              Team town / home base
+              <input type="text" name="teamTown" required />
+            </label>
+            <label>
+              Non-racers accompanying your team
+              <input type="number" name="nonRacers" min="0" step="1" value="0" />
+            </label>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Event Assignments</h2>
+          <p class="muted">
+            Enter an athlete once; when you type the same name for another leg, choose it from the
+            suggestions to instantly reuse their contact details.
+          </p>
+          <div class="event-grid">
+            <article class="event-card" data-event="mountain-bike" data-event-label="Mountain Bike">
+              <div class="event-card__header">
+                <h3>Mountain Bike</h3>
+                <small>Singletrack opener</small>
+              </div>
+              <div class="grid">
+                <label>
+                  Participant name
+                  <input
+                    type="text"
+                    name="mountainBikeName"
+                    list="participant-suggestions"
+                    data-field="name"
+                    autocomplete="off"
+                    required
+                  />
+                </label>
+                <label>
+                  Town / city
+                  <input type="text" name="mountainBikeTown" data-field="town" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="mountainBikeEmail" data-field="email" required />
+                </label>
+                <label>
+                  Emergency contact name
+                  <input type="text" name="mountainBikeEmergencyName" data-field="emergencyName" required />
+                </label>
+                <label>
+                  Emergency contact phone
+                  <input type="tel" name="mountainBikeEmergencyPhone" data-field="emergencyPhone" required />
+                </label>
+              </div>
+              <p class="event-card__status" data-role="status" data-state="empty"></p>
+            </article>
+
+            <article class="event-card" data-event="kayak" data-event-label="Kayak">
+              <div class="event-card__header">
+                <h3>Kayak</h3>
+                <small>Harbor leg</small>
+              </div>
+              <div class="grid">
+                <label>
+                  Participant name
+                  <input
+                    type="text"
+                    name="kayakName"
+                    list="participant-suggestions"
+                    data-field="name"
+                    autocomplete="off"
+                    required
+                  />
+                </label>
+                <label>
+                  Town / city
+                  <input type="text" name="kayakTown" data-field="town" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="kayakEmail" data-field="email" required />
+                </label>
+                <label>
+                  Emergency contact name
+                  <input type="text" name="kayakEmergencyName" data-field="emergencyName" required />
+                </label>
+                <label>
+                  Emergency contact phone
+                  <input type="tel" name="kayakEmergencyPhone" data-field="emergencyPhone" required />
+                </label>
+              </div>
+              <p class="event-card__status" data-role="status" data-state="empty"></p>
+            </article>
+
+            <article class="event-card" data-event="road-bike" data-event-label="Road Bike">
+              <div class="event-card__header">
+                <h3>Road Bike</h3>
+                <small>Peninsula loop</small>
+              </div>
+              <div class="grid">
+                <label>
+                  Participant name
+                  <input
+                    type="text"
+                    name="roadBikeName"
+                    list="participant-suggestions"
+                    data-field="name"
+                    autocomplete="off"
+                    required
+                  />
+                </label>
+                <label>
+                  Town / city
+                  <input type="text" name="roadBikeTown" data-field="town" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="roadBikeEmail" data-field="email" required />
+                </label>
+                <label>
+                  Emergency contact name
+                  <input type="text" name="roadBikeEmergencyName" data-field="emergencyName" required />
+                </label>
+                <label>
+                  Emergency contact phone
+                  <input type="tel" name="roadBikeEmergencyPhone" data-field="emergencyPhone" required />
+                </label>
+              </div>
+              <p class="event-card__status" data-role="status" data-state="empty"></p>
+            </article>
+
+            <article class="event-card" data-event="run" data-event-label="Run">
+              <div class="event-card__header">
+                <h3>Run</h3>
+                <small>Downtown finish</small>
+              </div>
+              <div class="grid">
+                <label>
+                  Participant name
+                  <input
+                    type="text"
+                    name="runName"
+                    list="participant-suggestions"
+                    data-field="name"
+                    autocomplete="off"
+                    required
+                  />
+                </label>
+                <label>
+                  Town / city
+                  <input type="text" name="runTown" data-field="town" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="runEmail" data-field="email" required />
+                </label>
+                <label>
+                  Emergency contact name
+                  <input type="text" name="runEmergencyName" data-field="emergencyName" required />
+                </label>
+                <label>
+                  Emergency contact phone
+                  <input type="tel" name="runEmergencyPhone" data-field="emergencyPhone" required />
+                </label>
+              </div>
+              <p class="event-card__status" data-role="status" data-state="empty"></p>
+            </article>
+          </div>
+        </section>
+
+        <button type="submit">Review roster</button>
+      </form>
+
+      <section id="submission-results" class="results card" hidden>
+        <h2>Submission Preview</h2>
+        <p class="muted">
+          Copy this single-row table directly into your Google Sheet once everything looks correct.
+        </p>
+        <div id="results-table"></div>
+      </section>
+    </main>
+
+    <datalist id="participant-suggestions"></datalist>
+
+    <script>
+      const directory = new Map();
+      const suggestionList = document.getElementById("participant-suggestions");
+      const eventCards = Array.from(document.querySelectorAll(".event-card"));
+      const resultsSection = document.getElementById("submission-results");
+      const resultsTableWrapper = document.getElementById("results-table");
+      const form = document.getElementById("team-form");
+
+      const EVENTS = eventCards.map((card) => ({
+        slug: card.dataset.event,
+        label: card.dataset.eventLabel,
+        element: card,
+      }));
+
+      const DIRECTORY_FIELDS = ["town", "email", "emergencyName", "emergencyPhone"];
+
+      const normalizeName = (value) => value.trim().toLowerCase();
+
+      const updateSuggestionList = () => {
+        suggestionList.innerHTML = "";
+        Array.from(directory.values())
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .forEach((participant) => {
+            const option = document.createElement("option");
+            option.value = participant.name;
+            suggestionList.appendChild(option);
+          });
+      };
+
+      const collectParticipant = (card) => {
+        const nameInput = card.querySelector('[data-field="name"]');
+        const data = {
+          name: nameInput.value.trim(),
+        };
+        DIRECTORY_FIELDS.forEach((field) => {
+          const input = card.querySelector(`[data-field="${field}"]`);
+          data[field] = input.value.trim();
+        });
+        return data;
+      };
+
+      const setParticipantFields = (card, participant) => {
+        DIRECTORY_FIELDS.forEach((field) => {
+          const input = card.querySelector(`[data-field="${field}"]`);
+          if (participant[field]) {
+            input.value = participant[field];
+          }
+        });
+        const status = card.querySelector('[data-role="status"]');
+        status.textContent = `Using saved info for ${participant.name}`;
+        status.dataset.state = "filled";
+      };
+
+      const clearStatus = (card, message = "") => {
+        const status = card.querySelector('[data-role="status"]');
+        status.textContent = message;
+        status.dataset.state = message ? "filled" : "empty";
+      };
+
+      const clearParticipantFields = (card) => {
+        DIRECTORY_FIELDS.forEach((field) => {
+          const input = card.querySelector(`[data-field="${field}"]`);
+          input.value = "";
+        });
+        clearStatus(card);
+      };
+
+      const syncDirectoryFromCard = (card) => {
+        const participant = collectParticipant(card);
+        if (!participant.name) {
+          return;
+        }
+        directory.set(normalizeName(participant.name), participant);
+        updateSuggestionList();
+        propagateParticipant(participant, card);
+        clearStatus(card, `Saved details for ${participant.name}`);
+      };
+
+      const propagateParticipant = (participant, sourceCard) => {
+        eventCards.forEach((card) => {
+          if (card === sourceCard) return;
+          const nameInput = card.querySelector('[data-field="name"]');
+          if (normalizeName(nameInput.value) === normalizeName(participant.name)) {
+            setParticipantFields(card, participant);
+          }
+        });
+      };
+
+      eventCards.forEach((card) => {
+        const nameInput = card.querySelector('[data-field="name"]');
+        nameInput.addEventListener("change", (event) => {
+          const chosenName = event.target.value.trim();
+          if (!chosenName) {
+            clearParticipantFields(card);
+            return;
+          }
+          const match = directory.get(normalizeName(chosenName));
+          if (match) {
+            setParticipantFields(card, match);
+          } else {
+            clearParticipantFields(card);
+          }
+        });
+
+        card.addEventListener(
+          "focusout",
+          (event) => {
+            if (event.target.matches("[data-field]")) {
+              syncDirectoryFromCard(card);
+            }
+          },
+          true
+        );
+      });
+
+      const buildHeaderCells = () => {
+        const base = [
+          { label: "Team Name", key: "teamName" },
+          { label: "Team Captain", key: "teamCaptain" },
+          { label: "Team Town", key: "teamTown" },
+          { label: "Non-Racers", key: "nonRacers" },
+        ];
+        const eventColumns = EVENTS.flatMap((event) => [
+          { label: `${event.label} · Name`, key: `${event.slug}-name` },
+          { label: `${event.label} · Town`, key: `${event.slug}-town` },
+          { label: `${event.label} · Email`, key: `${event.slug}-email` },
+          { label: `${event.label} · Emergency Name`, key: `${event.slug}-emergencyName` },
+          { label: `${event.label} · Emergency Phone`, key: `${event.slug}-emergencyPhone` },
+        ]);
+        return [...base, ...eventColumns];
+      };
+
+      const buildTable = (rowData) => {
+        const columns = buildHeaderCells();
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const headerRow = document.createElement("tr");
+        columns.forEach((col) => {
+          const th = document.createElement("th");
+          th.textContent = col.label;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+
+        const tbody = document.createElement("tbody");
+        const row = document.createElement("tr");
+        columns.forEach((col) => {
+          const td = document.createElement("td");
+          td.textContent = rowData[col.key] || "";
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        return table;
+      };
+
+      const gatherEventData = () => {
+        return EVENTS.map((event) => {
+          const { element, slug } = event;
+          const entry = { slug };
+          entry.name = element.querySelector('[data-field="name"]').value.trim();
+          DIRECTORY_FIELDS.forEach((field) => {
+            entry[field] = element.querySelector(`[data-field="${field}"]`).value.trim();
+          });
+          return entry;
+        });
+      };
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) {
+          return;
+        }
+        const formData = new FormData(form);
+        const events = gatherEventData();
+        const rowData = {
+          teamName: formData.get("teamName")?.trim() || "",
+          teamCaptain: formData.get("teamCaptain")?.trim() || "",
+          teamTown: formData.get("teamTown")?.trim() || "",
+          nonRacers: formData.get("nonRacers") || "0",
+        };
+
+        events.forEach((entry) => {
+          rowData[`${entry.slug}-name`] = entry.name;
+          rowData[`${entry.slug}-town`] = entry.town;
+          rowData[`${entry.slug}-email`] = entry.email;
+          rowData[`${entry.slug}-emergencyName`] = entry.emergencyName;
+          rowData[`${entry.slug}-emergencyPhone`] = entry.emergencyPhone;
+        });
+
+        resultsTableWrapper.innerHTML = "";
+        resultsTableWrapper.appendChild(buildTable(rowData));
+        resultsSection.hidden = false;
+        resultsSection.scrollIntoView({ behavior: "smooth" });
+      };
+
+      form.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>
