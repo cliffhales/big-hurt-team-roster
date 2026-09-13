@@ -1,4 +1,5 @@
 const ALLOWED_ORIGINS = new Set([
+  "https://big-hurt-team-roster.pages.dev",
   "https://big-hurt-survey.pages.dev",
   "https://peninsulaadventuresports.com",
   "https://www.peninsulaadventuresports.com",
