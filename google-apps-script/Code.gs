@@ -33,7 +33,13 @@ function doPost(e) {
     if (!sheet) return respond({ ok: false, error: `Sheet tab not found: ${SHEET_NAME}` });
     ensureHeaders(sheet);
 
-    const values = [new Date(), ...ROW_KEYS.map((key) => body.row[key] ?? "")];
+    // Team Number is intentionally blank on submission. Race staff assigns it later.
+    const values = [
+      new Date(),
+      ...ROW_KEYS.slice(0, 4).map((key) => body.row[key] ?? ""),
+      "",
+      ...ROW_KEYS.slice(4).map((key) => body.row[key] ?? ""),
+    ];
     sheet.appendRow(values);
     return respond({ ok: true });
   } catch (error) {
