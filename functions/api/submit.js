@@ -8,7 +8,7 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 function corsHeaders(origin) {
-  const allowedOrigin = ALLOWED_ORIGINS.has(origin) ? origin : "https://big-hurt-survey.pages.dev";
+  const allowedOrigin = ALLOWED_ORIGINS.has(origin) ? origin : "https://big-hurt-team-roster.pages.dev";
   return {
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
